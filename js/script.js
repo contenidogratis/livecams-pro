@@ -1,5 +1,3 @@
-
-
 (() => {
   'use strict';
 
@@ -50,7 +48,9 @@
   }
 
   function modelLink(model) {
-    const suppliedUrl = firstValue(model, ['url', 'link', 'profile_url', 'profileUrl', 'room_url', 'roomUrl']);
+    const suppliedUrl = firstValue(model, [
+      'url', 'link', 'profile_page_url', 'profilePageUrl', 'profile_url', 'profileUrl', 'room_url', 'roomUrl'
+    ]);
     if (suppliedUrl) return suppliedUrl;
 
     const username = firstValue(model, ['username', 'user_name', 'name', 'nickname', 'model_name', 'modelName']);
@@ -61,8 +61,12 @@
   }
 
   function modelMedia(model, name) {
-    const image = firstValue(model, [
-      'image_url', 'imageUrl', 'image', 'thumbnail_url', 'thumbnailUrl', 'thumbnail', 'preview_url', 'previewUrl', 'avatar_url', 'avatarUrl', 'photo'
+    // El Worker de Bonga devuelve las fotos dentro de profile_images.
+    const images = model?.profile_images || model?.profileImages || {};
+    const image = firstValue({ ...images, ...model }, [
+      'profile_image', 'profileImage', 'thumbnail_image_medium', 'thumbnailImageMedium',
+      'thumbnail_image_small', 'thumbnailImageSmall', 'image_url', 'imageUrl', 'image',
+      'thumbnail_url', 'thumbnailUrl', 'thumbnail', 'preview_url', 'previewUrl', 'avatar_url', 'avatarUrl', 'photo'
     ]);
     const video = firstValue(model, ['video_url', 'videoUrl', 'preview_video', 'previewVideo']);
 
