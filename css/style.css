@@ -1,1 +1,28 @@
 /* LiveCams Pro CSS */
+
+.categorias-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:40px;
+max-width:1200px;
+margin:auto;
+}
+
+.categoria{
+background:#1c1c1c;
+padding:30px;
+border-radius:15px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+border:2px solid #ff0066;
+color:white;
+}
+
+.categoria:hover{
+background:#ff0066;
+transform:scale(1.05);
+}
