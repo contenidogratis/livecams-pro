@@ -93,7 +93,7 @@
     const name = firstValue(model, ['username', 'user_name', 'name', 'nickname', 'model_name', 'modelName'], 'Modelo en vivo');
     const location = firstValue(model, ['location', 'country', 'country_name', 'countryName']);
     const viewers = firstValue(model, ['viewers', 'viewer_count', 'viewerCount', 'num_users', 'users']);
-    const topic = firstValue(model, ['topic', 'status', 'description', 'room_subject', 'roomSubject']);
+    const topic = firstValue(model, ['topic', 'description', 'room_subject', 'roomSubject']);
     const details = [location, viewers !== '' ? `${viewers} viendo` : ''].filter(Boolean).join(' · ');
     const link = modelLink(model);
 
