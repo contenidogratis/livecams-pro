@@ -5,78 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LiveCams Pro</title>
   <style>
-    :root{--pink:#ff0066;--bg:#101014;--panel:#1b1b22;--line:#31313b;--muted:#b9b9c2}
+    :root{--pink:#ff0066;--bg:#101014;--card:#1b1b22;--line:#363641;--muted:#c3c3ca}
     *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:#fff;font-family:Arial,Helvetica,sans-serif}
-    a{color:inherit}
-    .site-header{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 5%;background:#101014;border-bottom:1px solid var(--line)}
-    .logo{color:var(--pink);font-size:24px;font-weight:800;text-decoration:none}
-    nav{display:flex;gap:22px} nav a{color:#e4e4e8;text-decoration:none}
-    .hero{min-height:390px;display:grid;place-content:center;padding:65px 24px;text-align:center;background:radial-gradient(circle at top,#421126 0,transparent 52%)}
-    h1{max-width:780px;margin:10px auto 16px;font-size:clamp(38px,6vw,64px)}
-    h2{margin:5px 0;font-size:30px}.eyebrow{color:var(--pink);font-size:12px;font-weight:bold;letter-spacing:1px}
-    .hero p{max-width:620px;color:var(--muted);font-size:19px;line-height:1.5}
-    .primary-button,.modelo-button{display:inline-block;margin-top:20px;padding:13px 22px;border-radius:8px;background:var(--pink);color:#fff;font-weight:bold;text-decoration:none}
-    .content-section{max-width:1200px;margin:auto;padding:48px 24px}
-    .featured-section,.chat-section{border-top:1px solid var(--line)}
-    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:22px}
-    .category-grid a{padding:22px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel);text-align:center;text-decoration:none;font-weight:bold}
+    body{margin:0;background:var(--bg);color:white;font-family:Arial,Helvetica,sans-serif}
+    .header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:#101014;border-bottom:1px solid var(--line)}
+    .logo{color:var(--pink);font-size:25px;font-weight:bold;text-decoration:none}
+    nav{display:flex;gap:20px} nav a{color:white;text-decoration:none}
+    .hero{padding:52px 20px;text-align:center;background:radial-gradient(circle at top,#49112b,transparent 58%)}
+    h1{margin:10px auto;font-size:clamp(35px,6vw,60px)}
+    h2{margin:6px 0 24px;font-size:30px}
+    .intro{max-width:620px;margin:auto;color:var(--muted);font-size:18px}
+    .button{display:inline-block;margin-top:23px;padding:14px 22px;border-radius:8px;background:var(--pink);color:white;text-decoration:none;font-weight:bold}
+    .section{max-width:1200px;margin:auto;padding:46px 24px;border-top:1px solid var(--line)}
+    .section-title{text-align:center}
+    .eyebrow{margin:0;color:var(--pink);font-size:12px;font-weight:bold;letter-spacing:1.3px}
+    .chat-box{max-width:900px;min-height:310px;margin:auto;overflow:hidden;border-radius:12px;background:white}
+    .pink-list{display:flex;justify-content:center}.pink-list #bc_cw{width:200px}
     #modelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-    .modelo-card{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
-    .modelo-preview{position:relative;display:block;height:275px;background:#29292f;text-decoration:none}
+    .modelo-card{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+    .modelo-preview{position:relative;display:block;height:275px;background:#29292f}
     .modelo-media{width:100%;height:100%;object-fit:cover}
-    .modelo-live{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:6px;background:#e60045;font-size:12px;font-weight:bold}
+    .modelo-live{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:6px;background:#e60045;color:white;font-size:12px;font-weight:bold}
     .modelo-info{padding:14px}.modelo-info h3{margin:0;font-size:18px}
     .modelo-topic,.modelo-details{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .modelo-button{display:block;text-align:center;margin-top:13px}
-    .chat-section{text-align:center}
-    #chat-bonga{max-width:900px;min-height:310px;margin:25px auto 0;overflow:hidden;border-radius:12px;background:#fff;text-align:left}
-    footer{padding:28px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
-    @media(max-width:700px){.site-header{flex-direction:column}nav{flex-wrap:wrap}.category-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:520px){#modelos{grid-template-columns:repeat(2,1fr);gap:12px}.modelo-preview{height:205px}}
+    .modelo-button{display:block;margin-top:12px;padding:10px;background:var(--pink);border-radius:7px;color:white;text-align:center;text-decoration:none;font-weight:bold}
+    .modelos-status{grid-column:1/-1;text-align:center;color:var(--muted)}
+    footer{padding:26px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+    @media(max-width:600px){.header{align-items:flex-start;flex-direction:column}nav{flex-wrap:wrap;gap:12px}#modelos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.modelo-preview{height:205px}}
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="header">
     <a class="logo" href="#inicio">🔥 LiveCams Pro</a>
     <nav>
-      <a href="#inicio">Inicio</a>
+      <a href="#directo">Directo</a>
       <a href="#categorias">Categorías</a>
       <a href="#modelos-seccion">Modelos</a>
-      <a href="#chat">Chat</a>
     </nav>
   </header>
 
   <main>
     <section id="inicio" class="hero">
-      <p class="eyebrow">TRANSMISIONES EN DIRECTO</p>
-      <h1>Modelos en vivo, las 24 horas</h1>
-      <p>Explora las salas más populares y entra en directo con un solo clic.</p>
-      <a class="primary-button" href="#modelos-seccion">Ver modelos en vivo</a>
+      <p class="eyebrow">EN DIRECTO, 24 HORAS</p>
+      <h1>Encuentra tu sala favorita</h1>
+      <p class="intro">Entra al directo, explora las categorías y descubre más modelos.</p>
+      <a class="button" href="#directo">Ver el directo</a>
     </section>
 
-    <section id="categorias" class="content-section">
-      <h2>Categorías populares</h2>
-      <div class="category-grid">
-        <a href="#modelos-seccion">🔥 Más populares</a>
-        <a href="#modelos-seccion">❤️ Latinas</a>
-        <a href="#modelos-seccion">⭐ Nuevas</a>
-        <a href="#modelos-seccion">🎥 En directo</a>
+    <section id="directo" class="section">
+      <div class="section-title">
+        <p class="eyebrow">EN VIVO AHORA</p>
+        <h2>Directo y chat en vivo</h2>
       </div>
-    </section>
-
-    <section id="modelos-seccion" class="content-section featured-section">
-      <p class="eyebrow">AHORA EN DIRECTO</p>
-      <h2>Modelos destacadas</h2>
-      <div id="modelos"></div>
-    </section>
-
-    <section id="chat" class="content-section chat-section">
-      <p class="eyebrow">CONVERSACIÓN EN DIRECTO</p>
-      <h2>Chat en vivo</h2>
-      <div id="chat-bonga">
+      <div id="chat-bonga" class="chat-box">
         <script src="https://bngprm.com/promo.php?c=840433&type=embed_chat&top_model=1&model_offline=homepage" id="BC_EC"></script>
       </div>
+    </section>
+
+    <section id="categorias" class="section">
+      <div class="section-title">
+        <p class="eyebrow">EXPLORA LA PLATAFORMA</p>
+        <h2>Categorías</h2>
+      </div>
+      <div class="pink-list">
+        <div id="bc_cw">
+          <script src="https://bngprm.com/promo.php?c=840433&type=category_widget&bg_color=%23ffffff&width=200&layout=button1&btn_color=%2369034d&font_size=14&font_color=%23ccd0d0&section=straight"></script>
+        </div>
+      </div>
+    </section>
+
+    <section id="modelos-seccion" class="section">
+      <div class="section-title">
+        <p class="eyebrow">MÁS SALAS DISPONIBLES</p>
+        <h2>Modelos destacadas</h2>
+      </div>
+      <div id="modelos"></div>
     </section>
   </main>
 
