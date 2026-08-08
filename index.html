@@ -113,6 +113,73 @@ box-shadow:0 8px 20px rgba(255,0,102,.45);
     .modelos-status{grid-column:1/-1;text-align:center;color:var(--muted)}
     footer{padding:26px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
     @media(max-width:600px){.header{align-items:flex-start;flex-direction:column}nav{flex-wrap:wrap;gap:12px}#modelos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.modelo-preview{height:205px}}
+    .trabaja-box{
+    max-width:900px;
+    margin:40px auto;
+    padding:45px;
+    text-align:center;
+    border-radius:22px;
+    background:linear-gradient(145deg,rgba(255,0,102,.15),rgba(20,20,20,.95));
+    border:1px solid rgba(255,0,102,.35);
+    box-shadow:0 0 40px rgba(255,0,102,.20);
+}
+
+.trabaja-badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:#ff0066;
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.trabaja-box h2{
+    font-size:42px;
+    margin:10px 0 20px;
+}
+
+.trabaja-box p{
+    max-width:700px;
+    margin:auto;
+    color:#d6d6d6;
+    font-size:19px;
+    line-height:1.7;
+}
+
+.trabaja-beneficios{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin:35px 0;
+}
+
+.trabaja-beneficios div{
+    background:rgba(255,255,255,.05);
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.trabaja-btn{
+    display:inline-block;
+    padding:18px 42px;
+    border-radius:999px;
+    background:linear-gradient(90deg,#ff0066,#ff2d88);
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    transition:.25s;
+    box-shadow:0 0 25px rgba(255,0,102,.45);
+}
+
+.trabaja-btn:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 0 40px rgba(255,0,102,.70);
+}
   </style>
 </head>
 <body>
