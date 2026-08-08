@@ -173,24 +173,47 @@
 // ===== Panel de categorías =====
 const btnCategorias = document.getElementById("btnCategorias");
 const panelCategorias = document.getElementById("panelCategorias");
+const seccionCategorias = document.getElementById("categorias");
 const cerrarCategorias = document.getElementById("cerrarCategorias");
 const overlayCategorias = document.getElementById("overlayCategorias");
 
 if (btnCategorias) {
 
-    btnCategorias.onclick = () => {
-        panelCategorias.classList.add("activo");
-        overlayCategorias.classList.add("activo");
-    };
+   btnCategorias.onclick = () => {
 
-    cerrarCategorias.onclick = () => {
-        panelCategorias.classList.remove("activo");
-        overlayCategorias.classList.remove("activo");
-    };
+    const contenido = seccionCategorias.querySelector(".pink-list");
 
-    overlayCategorias.onclick = () => {
-        panelCategorias.classList.remove("activo");
-        overlayCategorias.classList.remove("activo");
-    };
+    if (contenido && !panelCategorias.contains(contenido)) {
+        panelCategorias.appendChild(contenido);
+    }
+
+    panelCategorias.classList.add("activo");
+    overlayCategorias.classList.add("activo");
+};
+
+   cerrarCategorias.onclick = () => {
+
+    panelCategorias.classList.remove("activo");
+    overlayCategorias.classList.remove("activo");
+
+    const contenido = panelCategorias.querySelector(".pink-list");
+
+    if (contenido) {
+        document.getElementById("categorias").appendChild(contenido);
+    }
+
+};
+overlayCategorias.onclick = () => {
+
+    panelCategorias.classList.remove("activo");
+    overlayCategorias.classList.remove("activo");
+
+    const contenido = panelCategorias.querySelector(".pink-list");
+
+    if (contenido) {
+        document.getElementById("categorias").appendChild(contenido);
+    }
+
+};
 
 }
