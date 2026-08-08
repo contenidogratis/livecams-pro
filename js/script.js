@@ -170,3 +170,27 @@
 
   loadModels();
 })();
+// ===== Panel de categorías =====
+const btnCategorias = document.getElementById("btnCategorias");
+const panelCategorias = document.getElementById("panelCategorias");
+const cerrarCategorias = document.getElementById("cerrarCategorias");
+const overlayCategorias = document.getElementById("overlayCategorias");
+
+if (btnCategorias) {
+
+    btnCategorias.onclick = () => {
+        panelCategorias.classList.add("activo");
+        overlayCategorias.classList.add("activo");
+    };
+
+    cerrarCategorias.onclick = () => {
+        panelCategorias.classList.remove("activo");
+        overlayCategorias.classList.remove("activo");
+    };
+
+    overlayCategorias.onclick = () => {
+        panelCategorias.classList.remove("activo");
+        overlayCategorias.classList.remove("activo");
+    };
+
+}
