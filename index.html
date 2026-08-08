@@ -180,6 +180,59 @@ box-shadow:0 8px 20px rgba(255,0,102,.45);
     transform:translateY(-3px) scale(1.05);
     box-shadow:0 0 40px rgba(255,0,102,.70);
 }
+    /* ====== LAYOUT CATEGORÍAS + MODELOS ====== */
+
+.contenido-principal{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:30px;
+    align-items:start;
+    margin-top:35px;
+}
+
+.categorias-lateral{
+    position:sticky;
+    top:95px;
+    background:rgba(20,20,20,.85);
+    border:1px solid rgba(255,0,102,.30);
+    border-radius:18px;
+    padding:20px;
+    backdrop-filter:blur(8px);
+}
+
+.categorias-lateral h3{
+    margin:0 0 18px;
+    color:#ff2d88;
+    text-align:center;
+    font-size:22px;
+}
+
+.categorias-lateral #bc_cw{
+    max-height:700px;
+    overflow:auto;
+}
+
+.categorias-lateral #bc_cw::-webkit-scrollbar{
+    width:8px;
+}
+
+.categorias-lateral #bc_cw::-webkit-scrollbar-thumb{
+    background:#ff0066;
+    border-radius:20px;
+}
+
+@media(max-width:900px){
+
+.contenido-principal{
+grid-template-columns:1fr;
+}
+
+.categorias-lateral{
+position:relative;
+top:0;
+}
+
+}
   </style>
 </head>
 <body>
@@ -213,18 +266,9 @@ box-shadow:0 8px 20px rgba(255,0,102,.45);
         <script src="https://bngprm.com/promo.php?c=840433&type=embed_chat&top_model=1&model_offline=homepage" id="BC_EC"></script>
       </div>
     </section>
+<div class="contenido-principal">
+<div class="contenido-central">
 
-    <section id="categorias" class="section">
-      <div class="section-title">
-        <p class="eyebrow">EXPLORA LA PLATAFORMA</p>
-        <h2>Categorías</h2>
-      </div>
-      <div class="pink-list">
-        <div id="bc_cw">
-          <script src="https://bngprm.com/promo.php?c=840433&type=category_widget&bg_color=%23ffffff&width=200&layout=button1&btn_color=%2369034d&font_size=14&font_color=%23ccd0d0&section=straight"></script>
-        </div>
-      </div>
-    </section>
 <section id="trabaja" class="section">
     <div class="trabaja-box">
 
@@ -265,6 +309,20 @@ box-shadow:0 8px 20px rgba(255,0,102,.45);
       </div>
       <div id="modelos"></div>
     </section>
+  </div>
+
+<aside class="categorias-lateral">
+    <div class="section-title">
+        <p class="eyebrow">EXPLORA</p>
+        <h2>Categorías</h2>
+    </div>
+
+    <div id="bc_cw">
+        <script src="https://bngprm.com/promo.php?c=840433&type=category_widget&bg_color=%23ffffff&width=200&layout=button1&btn_color=%2369034d&font_size=14&font_color=%23ccdd00&section=straight"></script>
+    </div>
+</aside>
+
+</div>
   </main>
 
 <footer>© LiveCams Pro</footer>
