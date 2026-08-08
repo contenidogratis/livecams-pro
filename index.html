@@ -180,6 +180,77 @@ box-shadow:0 8px 20px rgba(255,0,102,.45);
     transform:translateY(-3px) scale(1.05);
     box-shadow:0 0 40px rgba(255,0,102,.70);
 }
+  .btn-categorias{
+position:fixed;
+left:20px;
+top:50%;
+transform:translateY(-50%);
+z-index:9999;
+padding:15px 22px;
+background:#ff0066;
+color:#fff;
+border:none;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 25px rgba(255,0,102,.5);
+}
+
+.btn-categorias:hover{
+background:#ff2d88;
+}
+
+.panel-categorias{
+position:fixed;
+top:0;
+left:-340px;
+width:320px;
+height:100%;
+background:#111;
+overflow-y:auto;
+transition:.35s;
+z-index:10000;
+padding:25px;
+box-shadow:5px 0 30px rgba(0,0,0,.6);
+}
+
+.panel-categorias.activo{
+left:0;
+}
+
+.panel-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.panel-header h3{
+margin:0;
+color:white;
+}
+
+#cerrarCategorias{
+font-size:32px;
+cursor:pointer;
+color:#ff0066;
+}
+
+.overlay-categorias{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+display:none;
+z-index:9998;
+}
+
+.overlay-categorias.activo{
+display:block;
+}  
   </style>
 </head>
 <body>
@@ -268,8 +339,29 @@ box-shadow:0 8px 20px rgba(255,0,102,.45);
   </main>
 
 <footer>© LiveCams Pro</footer>
+  <!-- Botón flotante -->
+<button id="btnCategorias" class="btn-categorias">
+    ☰ Categorías
+</button>
+
+<!-- Panel lateral -->
+<div id="panelCategorias" class="panel-categorias">
+
+    <div class="panel-header">
+        <h3>Categorías</h3>
+        <span id="cerrarCategorias">&times;</span>
+    </div>
+
+    <div id="bc_cw">
+        <script src="https://bngprm.com/promo.php?c=840433&type=category_widget&bg_color=%23ffffff&width=220&layout=button1&btn_color=%2369034d&font_size=14&font_color=%23ccdd00&section=straight"></script>
+    </div>
+
+</div>
+
+<div id="overlayCategorias" class="overlay-categorias"></div>
 
 <script src="js/script.js"></script>
 <script src="https://bngprm.com/promo.php?type=sticky_banner&c=840433&lang=&sb%5Btop%5D=95&sb%5Bleft%5D=95&sb%5Bsize%5D=160x160&sb%5Btype_content%5D=live&sb%5Bmodel_zone%5D=free&sb%5Blanding%5D=chat&sb%5Bshow_logo%5D=0&sb%5Bshow_status%5D=0&sb%5Bautoupdate%5D=1&sb%5Btop_models%5D=1&sb%5Bmodels_by_geo%5D=1&sb%5Blogo_color%5D=%23ffffff&sb%5Blogo_bg_color%5D=%23ff266b&sb%5Bfrequency%5D=43200000&sb%5Bc%5D%5B%5D=granny&sb%5Bc%5D%5B%5D=housewives&sb%5Bc%5D%5B%5D=anal&sb%5Bc%5D%5B%5D=arab&sb%5Bc%5D%5B%5D=asian&sb%5Bc%5D%5B%5D=babes&sb%5Bc%5D%5B%5D=bondage&sb%5Bc%5D%5B%5D=white-girls&sb%5Bc%5D%5B%5D=curvy&sb%5Bc%5D%5B%5D=squirt&sb%5Bc%5D%5B%5D=shaved-pussy&sb%5Bc%5D%5B%5D=hairy-pussy&sb%5Bc%5D%5B%5D=big-ass&sb%5Bc%5D%5B%5D=pregnant&sb%5Bc%5D%5B%5D=pornstar&sb%5Bc%5D%5B%5D=fetish&sb%5Bc%5D%5B%5D=smoking&sb%5Bc%5D%5B%5D=indian&sb%5Bc%5D%5B%5D=teens-18&sb%5Bc%5D%5B%5D=toys&sb%5Bc%5D%5B%5D=latina&sb%5Bc%5D%5B%5D=lesbian&sb%5Bc%5D%5B%5D=mature&sb%5Bc%5D%5B%5D=best-for-privates&sb%5Bc%5D%5B%5D=muscle&sb%5Bc%5D%5B%5D=ebony&sb%5Bc%5D%5B%5D=brunette&sb%5Bc%5D%5B%5D=redhead&sb%5Bc%5D%5B%5D=petite&sb%5Bc%5D%5B%5D=bbw&sb%5Bc%5D%5B%5D=blonde&sb%5Bc%5D%5B%5D=group-sex&sb%5Bc%5D%5B%5D=huge-tits&sb%5Bc%5D%5B%5D=medium-tits&sb%5Bc%5D%5B%5D=small-tits&sb%5Bc%5D%5B%5D=big-tits&sb%5Bc%5D%5B%5D=college-girls&sb%5Bc%5D%5B%5D=couples"></script>
+  
 </body>
 </html>
