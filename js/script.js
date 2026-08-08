@@ -177,6 +177,9 @@ const seccionCategorias = document.getElementById("categorias");
 const cerrarCategorias = document.getElementById("cerrarCategorias");
 const overlayCategorias = document.getElementById("overlayCategorias");
 
+const btnCategorias = menuCategorias;
+
+if (menuCategorias) {
 menuCategorias.onclick = (e) => {
 
     e.preventDefault();
